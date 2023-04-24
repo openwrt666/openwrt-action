@@ -42,13 +42,13 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/immortalwrt/immortalwrt
+        REPO_URL: https://github.com/chainsx/lede
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-        sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+        #sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+        #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -57,7 +57,7 @@ jobs:
         ./scripts/feeds install -a
     - name: Configuration Customization - Build_Openwrt
       env:
-        CONFIG_FILE: 'r5s.config'
+        CONFIG_FILE: 'config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
