@@ -1,4 +1,4 @@
-name: Build_Openwrt
+name: Build_r5s_Openwrt
 
 on: 
   workflow_dispatch:
