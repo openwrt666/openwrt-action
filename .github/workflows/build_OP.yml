@@ -43,7 +43,7 @@ jobs:
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-        REPO_BRANCH: openwrt-23.05
+        REPO_BRANCH: openwrt-21.02
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
@@ -59,7 +59,7 @@ jobs:
         ./scripts/feeds install -a
     - name: Configuration Customization - Build_Openwrt
       env:
-        CONFIG_FILE: 'config'
+        CONFIG_FILE: 'immortalwrt-config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
