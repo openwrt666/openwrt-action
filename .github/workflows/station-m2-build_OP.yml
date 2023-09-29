@@ -44,12 +44,12 @@ jobs:
           php*
         sudo -E apt-get update
         sudo -E apt-get -y ack binutils bison build-essential \
-          ccache cmake device-tree-compiler flex gawk gettext \
-          git gperf intltool libelf-dev libglib2.0-dev \
-          libgmp3-dev libltdl-dev libncurses5-dev libssl-dev \
-          libreadline-dev libtool wget nano patch sudo \
-          pkgconf python3 python3-pyelftools xxd zlib1g-dev \
-          subversion swig texinfo unzip rsync python3-pyelftools
+        ccache cmake device-tree-compiler flex gawk gettext \
+        git gperf intltool libelf-dev libglib2.0-dev \
+        libgmp3-dev libltdl-dev libncurses5-dev libssl-dev \
+        libreadline-dev libtool wget nano patch sudo \
+        pkgconf python3 python3-pyelftools xxd zlib1g-dev \
+        subversion swig texinfo unzip rsync python3-pyelftools
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
     - name: Clone source code
