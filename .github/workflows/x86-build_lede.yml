@@ -69,7 +69,7 @@ jobs:
         ./scripts/feeds install -a
     - name: Configuration Customization - Build_Openwrt
       env:
-        CONFIG_FILE: 'x86-immor.config'
+        CONFIG_FILE: 'x86-lede.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
