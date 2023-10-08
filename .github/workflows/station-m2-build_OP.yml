@@ -1,4 +1,4 @@
-name: Build_station-m2-Openwrt
+name: Build_station-m2-op
 
 on: 
   workflow_dispatch:
@@ -55,8 +55,8 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/chainsx/lede
-        REPO_BRANCH: test
+        REPO_URL: https://github.com/chainsx/openwrt
+        REPO_BRANCH: openwrt-22.03
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
