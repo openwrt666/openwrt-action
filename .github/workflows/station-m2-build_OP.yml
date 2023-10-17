@@ -49,14 +49,14 @@ jobs:
         libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
         mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pyelftools \
         libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
-        vim wget xmlto xxd zlib1g-dev python3-setuptools python3-pip
+        vim wget xmlto xxd zlib1g-dev python3-setuptools python3-pip clang
         sudo -E apt-get -y autoremove --purge
         sudo pip3 install pylibfdt
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/immortalwrt/immortalwrt
-        REPO_BRANCH: openwrt-23.05
+        REPO_URL: https://github.com/chainsx/openwrt
+        REPO_BRANCH: openwrt-22.03
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
