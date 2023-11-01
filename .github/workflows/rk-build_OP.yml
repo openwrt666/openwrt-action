@@ -1,4 +1,4 @@
-name: Build_m68s_op
+name: Build_r5s,m68s,station-p2_op
 
 on: 
   workflow_dispatch:
@@ -70,7 +70,7 @@ jobs:
         ./scripts/feeds install -a
     - name: Configuration Customization - Build_Openwrt
       env:
-        CONFIG_FILE: 'm68s.config'
+        CONFIG_FILE: 'rk-op.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
