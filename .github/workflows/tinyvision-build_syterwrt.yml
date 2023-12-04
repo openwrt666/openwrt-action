@@ -87,4 +87,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/staging_dir/
+        path: openwrt/bin/targets
