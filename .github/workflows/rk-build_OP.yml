@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -51,6 +51,7 @@ jobs:
         libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
         vim wget xmlto xxd zlib1g-dev python3-setuptools python3-pip
         sudo -E apt-get -y autoremove --purge
+        sudo apt install binutils
         sudo pip3 install pylibfdt
         sudo -E apt-get clean
     - name: Clone source code
