@@ -1,4 +1,4 @@
-name: Build_r5s_lede
+name: Build_r5s_op
 
 on: 
   workflow_dispatch:
